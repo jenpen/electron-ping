@@ -2,10 +2,14 @@ const {app, Menu, Tray, nativeImage} = require('electron')
 const notify = require('electron-main-notification')
 
 let tray = null
-const image = nativeImage.createFromPath('tray_icon_purple.png')
+const image = nativeImage.createFromPath('tray_icon_black.png')
 image.setTemplateImage(true)
 
 app.on('ready', () => {
+  //app.dock.setIcon(image)
+  // setInterval(() => {
+  //   sayHey()
+  // }, 1000)
   app.dock.hide()
   tray = new Tray(image)
   const contextMenu = Menu.buildFromTemplate([
@@ -13,11 +17,7 @@ app.on('ready', () => {
     {label: 'Item2', type: 'radio'},
     {
       label: 'Say Hey',
-      click () {
-        notify('Hey!', { body: 'How you doin?' }, () => {
-          console.log('The notification got clicked on!')
-        })
-      }
+      click () { sayHey() }
     },
     {role: 'quit'}
 
@@ -31,3 +31,9 @@ app.on('ready', () => {
     tray.setImage(image)
   })
 })
+
+var sayHey = function () {
+  notify('Hey!', { body: 'How you doin?', silent: true }, () => {
+    console.log('The notification got clicked on!')
+  })
+}
