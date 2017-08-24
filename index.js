@@ -2,6 +2,7 @@ const {app, Menu, Tray} = require('electron')
 
 let tray = null
 app.on('ready', () => {
+  app.dock.hide()
   tray = new Tray('tray_icon_black.png')
   const contextMenu = Menu.buildFromTemplate([
     {label: 'Item1', type: 'radio', checked: true},
