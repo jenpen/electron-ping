@@ -1,0 +1,23 @@
+{
+  "name": "electron-ping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenpen/electron-ping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenpen/electron-ping/issues"
+  },
+  "homepage": "https://github.com/jenpen/electron-ping#readme",
+  "devDependencies": {
+    "electron": "^1.7.5",
+    "standard": "^10.0.3"
+  }
+}
